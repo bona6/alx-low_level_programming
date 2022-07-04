@@ -2,8 +2,9 @@
 
 /**
  * main - prints out the alphabet in lowercase except for 'qe'
+ *
  * Description: alphabet in lowercase except for qe
- * Return (0)
+ * Return: Always(0) Success
  */
 
 int main(void)

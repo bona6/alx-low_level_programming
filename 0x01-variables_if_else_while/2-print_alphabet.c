@@ -4,7 +4,7 @@
  * main - alphabet in lowercase, followed by a new line.
  *
  * Description: a program that prints the alphabet in lower case
- * Return - Always(0) (success)
+ * Return: Always(0) Success
  */
 
 int main(void)
