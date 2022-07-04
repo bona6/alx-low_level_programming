@@ -3,8 +3,8 @@
 /**
  * main - alphabet in lowercase, followed by a new line.
  *
- * Description: a program that prints the alphabet in lowercase then in uppercase
- * Return: Always(0) Success 
+ * Description: the alphabet in lower and upper case
+ * Return: Always(0) Success
  */
 
 int main(void)
