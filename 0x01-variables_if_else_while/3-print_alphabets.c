@@ -2,7 +2,7 @@
 
 /**
  * main - alphabet in lowercase, followed by a new line.
- *
+ * Description: a program that prints the alphabet in lowercase then in uppercase
  * Return - Always(0) (success) 
  */
 

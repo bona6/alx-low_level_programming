@@ -2,7 +2,7 @@
 
 /**
  * main - prints out the alphabet in lowercase except for 'qe'
- *
+ * Description: alphabet in lowercase except for qe
  * Return (0)
  */
 
