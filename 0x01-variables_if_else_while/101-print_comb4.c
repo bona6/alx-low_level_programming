@@ -31,12 +31,12 @@ int main(void)
 				}
 				else
 				{
-					putchar(',');
-					putchar(' ');
+					putchar(44);
+					putchar(32);
 				}
 			}
 		}
-		putchar('\n');
+		putchar("\n");
 		return (0);
 	}
 }

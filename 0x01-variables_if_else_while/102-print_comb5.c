@@ -24,12 +24,12 @@ int main(void)
 			}
 			if (j * 100 + i != 9899)
 			{
-				putchar(',');
-				putchar(' ');
+				putchar(44);
+				putchar(32);
 			}
 		}
 	}
-	putchar('\n');
+	putchar("\n");
 
 	return (0);
 }
