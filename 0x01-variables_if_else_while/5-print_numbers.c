@@ -3,7 +3,8 @@
 /**
  * main - prints all single digit numbers of base 10 starting from 0
  *
- * return (0)
+ * Description: Numbers should be in base 10
+ * Return: Always(0) Success
  */
 
 int main(void)
