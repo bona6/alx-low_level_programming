@@ -1,8 +1,7 @@
 #include "main.h"
 
 /**
- * 
- * Description: print_alphabet -> prints the lowercase alphabets
+ * print_alphabet -> prints the alphabet x10
  */
 
 void print_alphabet_x10(void)
@@ -10,7 +9,7 @@ void print_alphabet_x10(void)
 int j;
 int x;
 
-for (x = 0; x <= 10; x++)
+for (x = 0; x < 10; x++)
 {
 for (j = 'a'; j <= 'z'; j++)
 {
