@@ -1,0 +1,1 @@
+This directory is for the exercise of functions and nested loops
