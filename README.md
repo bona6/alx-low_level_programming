@@ -1,1 +1,1 @@
-This is a directory for the functions and nested loops
+This directory is for low level programming
