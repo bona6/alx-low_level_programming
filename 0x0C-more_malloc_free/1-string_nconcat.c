@@ -1,51 +1,32 @@
 #include "main.h"
-/**
-  *string_nconcat - check if malloc library is assigning memories
-  *@s1: variable
-  *@s2: parameter 2
-  *@n : n charachter
-  *Return: integer
-  */
+#include <stddef.h>
+#include <stdlib.h>
 
+/**
+  * string_nconcat -> check if malloc library is assigning memories
+  * @s1: param 1
+  * @s2: param 2
+  * @n: param 3
+  * Return: string
+  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-char *concat_str;
-unsigned int concat_index = 0, lens2 = 0, lens1 = 0, idx = 0;
+unsigned int len = n, index;
+char *concat;
 if (s1 == NULL)
 s1 = "";
 if (s2 == NULL)
 s2 = "";
-for (; s2[lens1] != '\0'; lens1++)
-;
-for (; s2[lens2] != '\0'; lens2++)
-;
-if (n > lens2)
-concat_str = malloc(sizeof(char *) * (lens1 + lens2 + 1));
-else
-concat_str = malloc(sizeof(char) * (lens1 + n + 1));
-if (concat_str == NULL)
+for (index = 0; s1[index]; index++)
+len++;
+concat = (char *)malloc(sizeof(char) * (len + 1));
+if(concat == NULL)
 return (NULL);
-while (s1[concat_index] != '\0')
-{
-concat_str[concat_index] = s1[concat_index];
-concat_index++;
-}
-if (lens2 <= n)
-{
-while (s2[idx] != '\0')
-{
-concat_str[concat_index++] = s2[idx];
-idx++;
-}
-}
-else
-{
-while (idx < n && s2[idx] != '\0')
-{
-concat_str[concat_index] = s2[idx++];
-concat_index++;
-}
-}
-concat_str[concat_index] = '\0';
-return (concat_str);
+len = 0;
+for (index = 0; s1[index]; index++)
+concat[len++] = s1[index];
+for (index = 0; s2[index] && index < n; index++)
+concat[len++] = s2[index];
+concat[len] = '\0';
+return (concat);
 }
