@@ -9,22 +9,16 @@
 
 int main(void)
 {
-	int i, j;
+	int num;
 
-	for (i = 0; i < 11; i++)
+	for (num = 0; num <= 9; num++)
 	{
-		for (j = 0; j < 11; j++)
+		putchar((num * 10) + '0');
+		if (num = 9)
 		{
-			if (j > i)
-			{
-				putchar(i + '0');
-				putchar(j + '0');
-				if (i != 8 && j != 9)
-				{
-				putchar(',');
-				putchar(' ');
-				}
-			}
+			continue;
+			putchar(',');
+			putchar(' ');
 		}
 	}
 	putchar('\n');
