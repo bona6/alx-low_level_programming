@@ -8,35 +8,26 @@
 
 int main(void)
 {
-	int i, j, k;
+	int num1, num2, num3;
 
-	for (i = 48; i < 58; i++)
+	for (num1 = 0; num1 < 8; num1++)
 	{
-		for (j = 48; j < 58; j++)
+		for (num2 = num1 + 1; num2 < 9; num2++)
 		{
-			for (k = 48; k < 58; k++)
+			for (num3 = num2 + 1; num3 < 10; num3++)
 			{
-				if (i == j || j == k || i == k)
-				{
+				putchar((num1 % 10) + '0');
+				putchar((num2 % 10) + '0');
+				putchar((num3 % 10) + '0');
+				if (num1 == 7 && num2 == 8 && num3 == 9)
 					continue;
-				}
-				putchar(i);
-				putchar(j);
-				putchar(k);
-
-				if (i == 55 && j == 56 && k == 57)
-				{
-					break;
-
-				}
-				else
-				{
-					putchar(44);
-					putchar(32);
-				}
+				putchar(',');
+				putchar(' ');
 			}
 		}
-		putchar("\n");
-		return (0);
 	}
+
+	putchar('\n');
+
+	return (0);
 }
