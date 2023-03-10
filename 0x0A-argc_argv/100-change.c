@@ -1,63 +1,49 @@
 #include <stdio.h>
-#include "main.h"
 #include <stdlib.h>
-#include <ctype.h>
-/**
-  *main - entry
-  *@argv : the string from the terminal
-  *@argc : the number of arameters
-  *Return: 0
-  */
-
-int main(int argc, char const *argv[])
-{
-if (argc != 2)
-{
-printf("Error\n");
-return (-1);
-}
-if (atoi(argv[1]) >= 0)
-{
-int c = 0;
-checker(atoi(argv[1]), c);
-}
-else if (atoi(argv[1]) < 0)
-{
-printf("0\n");
-}
-return (0);
-}
 
 /**
-  * checker - entry function
-  *@c : variable
-  *@b : variable
-  */
+ * main - prints the minimum number of coins
+ * @argv: array of strings of arguments
+ * @argc: size of the argv
+ * Return: always 0
+ */
 
-void checker(int c, int b)
+int main(int argc, char *argv[])
 {
-if (c >= 25)
-{
-checker(c - 25, b + 1);
-}
-else if (c >= 10)
-{
-checker(c - 10, b + 1);
-}
-else if (c >= 5)
-{
-checker(c - 5, b + 1);
-}
-else if (c >= 2)
-{
-checker(c - 2, b + 1);
-}
-else if (c >= 1)
-{
-checker(c - 1, b + 1);
-}
-else if (c == 0)
-{
-printf("%d\n", b);
-}
+	int count = 0, cents, i;
+	int coins[] = {25, 10, 5, 2, 1};
+
+	if (argc != 2)
+	{
+		puts("Error");
+		return (1);
+	}
+	for (i = 0; argv[1][i]; i++)
+	{
+		if ((argv[1][i] < '0' || argv[1][i] > '9') && !(argv[1][i] == '-' && i == 0))
+		{
+			puts("Error");
+			return (1);
+		}
+	}
+	cents = atoi(argv[1]);
+	if (cents < 1)
+	{
+		puts("0");
+		return (0);
+	}
+	while (cents > 0)
+	{
+		for (i = 0; i < 5; i++)
+		{
+			if (cents - coins[i] >= 0)
+			{
+				cents -= coins[i];
+				count++;
+				break;
+			}
+		}
+	}
+	printf("%d\n", count);
+	return (0);
 }
