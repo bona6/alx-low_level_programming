@@ -1,30 +1,23 @@
-#include "main.h"
-/**
-  *array_range- check if malloc library is assigning memories
-  *@min: variable
-  *@max: parameter 2
-  *Return: integer
-  */
+#include <stdlib.h>
 
+/**
+ * array_range - create an array of integers in a range
+ * @min: minimum value in the range
+ * @max: maximum value in the range
+ * Return: pointer to array
+ */
 int *array_range(int min, int max)
 {
-int i = 0, t;
-int *ptr;
-if (min > max)
-{
-return (NULL);
-}
-ptr = malloc(sizeof(int) * (max - min));
-if (ptr == NULL)
-{
-return (NULL);
-}
-t = min;
-while (i < max - min)
-{
-ptr[i] = t;
-t++;
-i++;
-}
-return (ptr);
+	int *p, i;
+
+	if (min > max)
+		return (NULL);
+	p = malloc((max - min + 1) * sizeof(*p));
+	if (p == NULL)
+		return (NULL);
+	for (i = 0; min + i <= max; i++)
+	{
+		p[i] = min + i;
+	}
+	return (p);
 }
